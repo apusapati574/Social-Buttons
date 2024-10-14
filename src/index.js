@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* eslint-disable no-undef */
+const Button = (props) => {
+  const {className, buttonText} = props;
+  return (
+    <button className={`${className}`}>{buttonText}</button>
+  );
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const element = (
+  <div className="bg-container">
+    <h1 className="heading">Social Buttons</h1>
+    <div>
+      <Button className="like-button" buttonText="Like" />
+      <Button className="comment-button" buttonText="Comment" />
+      <Button className="share-button" buttonText="Share" />
+    </div>
+  </div>
 );
+ReactDOM.render(element, document.getElementById("root"));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
